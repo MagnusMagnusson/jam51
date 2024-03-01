@@ -66,7 +66,7 @@ function load_obj(argument0, argument1) {
 
 	// Create the vertex buffer
 	var model = vertex_create_buffer();
-	vertex_begin(model, o_camera.format);
+	vertex_begin(model, global.format);
 
 	// Create the lists of position/normal/texture data
 	var vertex_x = ds_list_create();

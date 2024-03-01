@@ -29,6 +29,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3d","folderPath":"folders/Scripts/3d.yy",},
   ],
   "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"house_1.mtl","CopyToMask":-1,"filePath":"datafiles/assets/models",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"house_1.obj","CopyToMask":-1,"filePath":"datafiles/assets/models",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"skybox.mtl","CopyToMask":-1,"filePath":"datafiles/assets/models",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"skybox.obj","CopyToMask":-1,"filePath":"datafiles/assets/models",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"van.mtl","CopyToMask":-1,"filePath":"datafiles/assets/models",},
@@ -47,9 +49,14 @@
     {"id":{"name":"o_car","path":"objects/o_car/o_car.yy",},},
     {"id":{"name":"model_load_obj","path":"scripts/model_load_obj/model_load_obj.yy",},},
     {"id":{"name":"scr_car_physics","path":"scripts/scr_car_physics/scr_car_physics.yy",},},
+    {"id":{"name":"o_building","path":"objects/o_building/o_building.yy",},},
     {"id":{"name":"o_camera","path":"objects/o_camera/o_camera.yy",},},
+    {"id":{"name":"o_wall","path":"objects/o_wall/o_wall.yy",},},
     {"id":{"name":"spr_skybox","path":"sprites/spr_skybox/spr_skybox.yy",},},
     {"id":{"name":"scr_car_input","path":"scripts/scr_car_input/scr_car_input.yy",},},
+    {"id":{"name":"spr_building","path":"sprites/spr_building/spr_building.yy",},},
+    {"id":{"name":"d3d_start","path":"scripts/d3d_start/d3d_start.yy",},},
+    {"id":{"name":"scr_model_manager","path":"scripts/scr_model_manager/scr_model_manager.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [

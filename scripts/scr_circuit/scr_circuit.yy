@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_car_input",
+  "name": "scr_circuit",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Car Scripts",
-    "path": "folders/Scripts/Car Scripts.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

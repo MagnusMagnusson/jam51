@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_car_input",
+  "name": "scr_keep_car_on_track",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

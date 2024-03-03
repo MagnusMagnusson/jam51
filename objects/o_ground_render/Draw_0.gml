@@ -4,7 +4,6 @@ shader_set(sh_ground);
 shader_set_uniform_f(_x, o_camera.x);
 shader_set_uniform_f(_y, o_camera.y);
 
-var off = 7500;
 var s =  (2 * off) / sprite_get_width(s_placeholdertexture);
 
 shader_set_uniform_f(size, 2 * off);

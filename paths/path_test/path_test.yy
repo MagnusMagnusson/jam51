@@ -1,7 +1,7 @@
 {
   "resourceType": "GMPath",
   "resourceVersion": "1.0",
-  "name": "Path1",
+  "name": "path_test",
   "closed": true,
   "kind": 1,
   "parent": {

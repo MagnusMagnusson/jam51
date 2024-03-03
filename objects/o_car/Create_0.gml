@@ -17,3 +17,6 @@ lap = 1;
 is_human = false;
 timer = 0;
 engine = new CarEngine(id, enginePower, breakingPower, handlingPower, corneringStiffness, airDrag, wheelDrag);
+emitter = audio_emitter_create();
+audio_emitter_falloff(emitter, 100, 500, 1);
+engine_rev = audio_play_sound_on(emitter, snd_engine, true, 1, 0.5);

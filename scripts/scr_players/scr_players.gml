@@ -44,4 +44,5 @@ function PlayerManager() constructor{
 function Player(isHuman) constructor{
 	car_object = instance_create_layer(0,0,layer_get_id("overground"), o_car);
 	car_object.is_human = isHuman;
+	car_object.engine.skiddingSpeed = isHuman ? 20 : 2000;
 }

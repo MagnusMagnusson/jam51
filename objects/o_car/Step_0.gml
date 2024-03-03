@@ -30,3 +30,5 @@ if(competitor){
 }
 
 image_angle = heading;
+audio_emitter_position(emitter, x, y, 0);
+audio_sound_pitch(engine_rev, engine.rpm)

@@ -26,8 +26,9 @@ function keep_car_on_track(){
 				x = ctrl.circuit.getTrueX(lastKnownCircuitPosition, 0);
 				y = ctrl.circuit.getTrueY(lastKnownCircuitPosition, 0);
 				speed = 0;
-				disable_inputs = 1 * fps;
+				disable_inputs = 1.5 * fps;
 				direction = trackHeading;
+				heading = trackHeading;
 			} else {
 				speed = speed * 0.9;
 			}

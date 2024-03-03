@@ -4,10 +4,12 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	maxHandling = _handling; 
 	dragForce = _drag;
 	corneringStiffness = _cornering
+	skiddingSpeed = 20;
 	frictionForce = _friction;
 	car = _car;
 	wheelAngle = 0;
 	wheelBase = 8;
+	rpm = 1;
 	
 	
 	applyTraction = function(_direction, force){
@@ -18,9 +20,10 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	}
 	
 	applyBreaks = function(_direction, force){
-		var f = -breakPower * force;
-		with(car){
-			motion_add(_direction, f);
+		if(car.speed < 1){
+			car.speed = 0;
+		} else{
+			car.speed = car.speed * 0.99;
 		}
 	}
 	
@@ -46,9 +49,14 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	applyAngularVelocity = function(_speed, _heading){
 		var R = self.getTurningRadius(_heading);
 		var W = self.getAngularVelocity(_heading, _speed);
+		var sp = self.skiddingSpeed;
 		with(car){
-			direction += W;
-			heading += W;
+			if(speed <= sp){
+				direction += W;
+				heading += W;
+			} else {
+				heading += W;
+			}
 		}
 	}
 	

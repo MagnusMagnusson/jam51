@@ -15,11 +15,11 @@ var distance_in_front = debugCameraEnabled ? 1 : 40;
 var camera_height = debugCameraEnabled ? 1000 : 120;
 var camera_target_height = debugCameraEnabled ? 0 : 40;
 	
-if(lookatDirection !=lastHeading){
+if(lookatDirection != lastDirection){
 	if(abs( angle_difference(lookatDirection, lastDirection)) < 2){
-		lookatDirection = my_car.heading;
+		lookatDirection = my_car.direction;
 	} else {
-		lookatDirection -= 4 * sign(angle_difference(lookatDirection, lastDirection));
+		lookatDirection -= 3 * sign(angle_difference(lookatDirection, lastDirection));
 	}
 }
 

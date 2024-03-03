@@ -11,3 +11,4 @@ z = 28;
 zplane = 5000;
 lastDirection = 0;
 lastHeading = 0;
+audio_listener_orientation(0, 0, 1, 0, -1, 0);

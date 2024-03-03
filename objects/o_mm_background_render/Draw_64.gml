@@ -1,0 +1,1 @@
+draw_text(0,0,string("{0} {1} {2}",xto,yto,zto));

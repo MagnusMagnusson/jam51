@@ -11,7 +11,6 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	
 	
 	applyTraction = function(_direction, force){
-		show_debug_message("drive {0}",enginePower * force)
 		var f = enginePower * force;
 		with(car){
 			motion_add(_direction, f);
@@ -28,7 +27,6 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	applyDrag = function(_hspeed, _vspeed,  _speed){
 		var _xdrag = -dragForce * _hspeed * _speed;
 		var _ydrag = -dragForce * _vspeed * _speed;
-		show_debug_message("drag {0} {1}",point_direction(0,0,_xdrag,_ydrag), point_distance(0,0,_xdrag,_ydrag));
 		with(car){
 			motion_add(point_direction(0,0,_xdrag,_ydrag), point_distance(0,0,_xdrag,_ydrag));
 		}
@@ -38,7 +36,6 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 		var f = -_speed * frictionForce;
 		with(car){
 			motion_add(_direction, f);
-			show_debug_message("wheel {0} {1}",_direction, f);
 		}
 	}
 	
@@ -58,13 +55,11 @@ function CarEngine(_car, _enginePower,_breakPower, _handling, _cornering, _drag,
 	static getTurningRadius = function(heading){
 		var radian = degtorad(wheelAngle);
 		var turnRadius = wheelBase / sin(radian);
-		show_debug_message("Turn Radius {0}", turnRadius);
 		return turnRadius;
 	}
 	
 	static getAngularVelocity = function(_heading, _speed){
 		var w =  _speed / self.getTurningRadius(_heading);
-		show_debug_message("Angular Velocity  {0}", w);
 		return w;
 	}
 }

@@ -14,5 +14,19 @@ if(wall){
 	}
 }
 
+var competitor = instance_place(x + hspeed, y + vspeed, o_car)
+if(competitor){
+	var speedDiff = abs(abs(speed) - abs(other.speed)) / 4;
+	var pd = point_direction(x,y, other.x, other.y);
+	motion_add(pd + 180, speedDiff);
+	
+	with(other){
+		motion_add(pd, speedDiff);
+	}
+	while(instance_place(x + hspeed, y + vspeed, competitor)){
+		x = x + lengthdir_x(1, point_direction(competitor.x, competitor.y, x, y));
+		y = y + lengthdir_y(1, point_direction(competitor.x, competitor.y, x, y));
+	}
+}
 
 image_angle = heading;

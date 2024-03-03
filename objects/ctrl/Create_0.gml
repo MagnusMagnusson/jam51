@@ -1,7 +1,7 @@
 circuit = new Circuit(Path1, 8);
 circuit_width = 600;
 flag = ModelManager().get("finish_flag");
-laps = 3;
+laps = 1;
 countdown = 5;
 message = ""; 
 messageTimer = 0;
@@ -16,6 +16,9 @@ fullap = function(car){
 		if(car.lap == laps && car.is_human){
 			message = "FINAL LAP!";
 			messageTimer = 3;
+		}
+		if(car.lap > laps){
+			car.is_human = false;
 		}
 	}
 }

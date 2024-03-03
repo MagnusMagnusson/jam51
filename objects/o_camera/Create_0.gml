@@ -9,3 +9,5 @@ skybox.texture = sprite_get_texture(spr_skybox,0);
 z = 28;
 
 zplane = 5000;
+lastDirection = 0;
+lastHeading = 0;

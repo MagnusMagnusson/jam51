@@ -53,6 +53,7 @@
     {"id":{"name":"scr_input","path":"scripts/scr_input/scr_input.yy",},},
     {"id":{"name":"s_placeholdertexture","path":"sprites/s_placeholdertexture/s_placeholdertexture.yy",},},
     {"id":{"name":"Path1","path":"paths/Path1/Path1.yy",},},
+    {"id":{"name":"fnt_giant","path":"fonts/fnt_giant/fnt_giant.yy",},},
     {"id":{"name":"o_car","path":"objects/o_car/o_car.yy",},},
     {"id":{"name":"model_load_obj","path":"scripts/model_load_obj/model_load_obj.yy",},},
     {"id":{"name":"sh_ground","path":"shaders/sh_ground/sh_ground.yy",},},
@@ -64,6 +65,7 @@
     {"id":{"name":"scr_players","path":"scripts/scr_players/scr_players.yy",},},
     {"id":{"name":"fnt_bog","path":"fonts/fnt_bog/fnt_bog.yy",},},
     {"id":{"name":"spr_skybox","path":"sprites/spr_skybox/spr_skybox.yy",},},
+    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"scr_car_input","path":"scripts/scr_car_input/scr_car_input.yy",},},
     {"id":{"name":"spr_building","path":"sprites/spr_building/spr_building.yy",},},
     {"id":{"name":"d3d_start","path":"scripts/d3d_start/d3d_start.yy",},},
@@ -73,6 +75,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

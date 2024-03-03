@@ -5,8 +5,11 @@ function keep_car_on_track(){
 		if(lastKnownCircuitPosition >= 1){
 			lastKnownCircuitPosition -= 1;
 		}
+		if(old > 0.4 && old < 0.5 && lastKnownCircuitPosition >= 0.5){
+			ctrl.halfLap(id);
+		}
 		if(lastKnownCircuitPosition < old && old >= 0.99){
-			show_debug_message("NEW LAP", circuitDistance);
+			ctrl.fullap(id);
 			circuitDistance = 0;
 		} else {
 			circuitDistance = ctrl.circuit.getDistanceFromTrack(x, y, lastKnownCircuitPosition, 0 , 0);

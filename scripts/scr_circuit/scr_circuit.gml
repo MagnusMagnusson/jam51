@@ -82,4 +82,22 @@ function Circuit(_path, _scale) constructor{
 		return dx*dx + dy*dy;
 	}
 	
+	positionRacers = function(racers, width, offset){
+		for(var i = 0; i < array_length(racers); i++){
+			var racer = racers[i];
+			var car = racer.car_object;
+			var p = 1 - 0.002 * (2 + i);
+			var _x = self.getTrueX(p, offset);
+			var _y = self.getTrueY(p, offset);
+			var d = self.getDirection(p);
+			var trueX = _x + lengthdir_x(width / 4, d + (i % 2 ? -90 : 90));
+			var trueY = _y + lengthdir_y(width / 4, d + (i % 2 ? -90 : 90));
+			
+			car.x = trueX;
+			car.y = trueY;
+			car.direction = d;
+			car.heading = d;
+		}
+	}
+	
 }

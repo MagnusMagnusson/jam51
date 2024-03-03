@@ -1,4 +1,4 @@
-process_car_input();
+process_car_input(is_human, heading, lastKnownCircuitPosition);
 keep_car_on_track();
 
 var wall = instance_place(x + hspeed, y + vspeed, o_wall);

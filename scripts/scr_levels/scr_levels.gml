@@ -22,7 +22,7 @@ function _Levels() constructor{
 		0.85,
 		0.95,
 		1,
-		1.01
+		1.02
 	]
 	
 	add = function(level){
@@ -69,29 +69,29 @@ function _Levels() constructor{
 	var night = new Cup(4, "Midnight Madness", noone);
 	
 	add(new Level(0, "The First Job", path_test, 1, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level(1, "Figure Eight", path_figure_eight, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level(2, "Easy pickings", path_corners, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level(3, "A long stretch", path_marathon, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(1, "Figure Eight", path_figure_eight, 1, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(2, "Tight corners", path_corners, 1, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(3, "A long stretch", path_marathon, 1, morning, 0, diff[0], cheating[0], 0, 0, 0));
 		
-	add(new Level(4, "Picking up heat", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level(5,"Figure Eight", path_figure_eight, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level(6, "Easy pickings", path_corners, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level(7, "A long stretch", path_marathon, 3, noon, 8, diff[2], cheating[1], 0, 0, 0));
+	add(new Level(4, "Picking up speed", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(5,"Three Times Eight", path_figure_eight, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(6, "More Corners", path_corners, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(7, "Urgent Delivery", path_marathon, 3, noon, 8, diff[2], cheating[1], 0, 0, 0));
 		
-	add(new Level(8, "Picking up heat", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level(9, "Figure Eight", path_figure_eight, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level(10, "Easy pickings", path_corners, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level(11, "A long stretch", path_marathon, 3, afternoon, 16, diff[3], cheating[2], 0, 0, 0));
+	add(new Level(8, "No Time To Rest", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(9, "Car, meet road", path_figure_eight, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(10, "Halfway point", path_corners, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(11, "Soap!", path_marathon, 3, afternoon, 16, diff[3], cheating[2], 0, 0, 0));
 		
-	add(new Level(12, "Picking up heat", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level(13, "Figure Eight", path_figure_eight, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level(14, "Easy pickings", path_corners, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level(15, "A long stretch", path_marathon, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(12, "On even ground", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(13, "Speed demon", path_figure_eight, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(14, "Slide those corners", path_corners, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(15, "The final gate", path_marathon, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
 		
-	add(new Level(16, "Picking up heat", path_test, 3, night, 57 - 9 - 3, diff[4], cheating[4], 0, 0, 0));
-	add(new Level(17, "Figure Eight", path_figure_eight, 3, night, 57 - 6 - 2, diff[4], cheating[4], 0, 0, 0));
-	add(new Level(18, "Easy pickings", path_corners, 3, night, 57 - 3 - 1, diff[4], cheating[4], 0, 0, 0));
-	add(new Level(19, "A long stretch", path_marathon, 3, night, 57, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(16, "Mastery: Curves", path_test, 3, night, 57 - 9 - 3, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(17, "Mastery: Straights", path_figure_eight, 3, night, 57 - 6 - 2, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(18, "Mastery: Corners", path_corners, 3, night, 57 - 3 - 1, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(19, "Van Driver Supreme", path_marathon, 3, night, 57, diff[4], cheating[4], 0, 0, 0));
 	
 }
 

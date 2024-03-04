@@ -79,11 +79,11 @@ function robot_get_input(circuitPosition, carHeading){
 		}
 	}
 	
-	if(distanceFromTrack > (w/2 + 32)){
+	if(distanceFromTrack > (w/3)){
 		var center_x = ctrl.circuit.getTrueX(circuitPosition, 0);
 		var center_y = ctrl.circuit.getTrueY(circuitPosition, 0);
-		x -= sign(x - center_x);
-		y -= sign(y - center_y);
+		x -= (5 + engine.enginePower)*sign(x - center_x);
+		y -= (5 + engine.enginePower)*sign(y - center_y);
 	}
 
 	return inputs;

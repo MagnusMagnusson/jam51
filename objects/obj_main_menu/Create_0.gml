@@ -18,6 +18,10 @@ enum menu_layers {
 }
 
 
+if(global.skipToLevelSelect){
+	instance_destroy();
+	instance_create_layer(0,0,layer, obj_level_select);
+}
 
 option_functions = [
 	function(){ 

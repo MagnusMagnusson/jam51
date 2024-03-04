@@ -7,6 +7,8 @@ function SaveFile() constructor{
 	return global.__save;
 }
 
+	global.skipToLevelSelect = false;
+	
 function _Save() constructor{
 	fname = "user_data/save.json";
 	load = function(){	

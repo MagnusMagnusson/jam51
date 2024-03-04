@@ -8,6 +8,7 @@ messageTimer = 0;
 halfLap = function(car){
 	car.halfLap = true;
 }
+race_done = false;
 
 results = [];
 fullap = function(car){
@@ -18,21 +19,29 @@ fullap = function(car){
 			message = "FINAL LAP!";
 			messageTimer = 3;
 		}
-		if(car.lap > laps){
+		if(!race_done && car.lap > laps){
 			car.finalTime = car.timer;
 			array_push(ctrl.results, car);
 			if(car.is_human){
+				ctrl.race_done = true;
 				var human = Players().human();
 				global.level.bestStars = max(global.level.bestStars, 4 - Players().getPosition(human));
 				global.level.bestTime = global.level.bestTime == 0 ? human.timer : min(human.timer, global.level.bestTime);
 				global.level.bestPosition = global.level.bestPosition == 0 ?  Players().getPosition(human) : min(Players().getPosition(human), global.level.bestPosition);
 				SaveFile().save();
+				ctrl.humanCar = car;
+				ctrl.humanPosition = Players().getPosition(car);
 				car.is_human = false;
 				with(o_car){
-					if(car.lap <= laps){
-						array_push(ctrl.results, car);
+					if(lap <= ctrl.laps){
+						finalTime = 0.1 + Players().estimateFinishTime(id);
+						array_push(ctrl.results, id);
+						lap = ctrl.laps + 1;
 					}
 				}
+				array_sort(ctrl.results, function(a,b){
+					return a.finalTime - b.finalTime;
+				});
 				instance_create_layer(0,0,layer, o_race_results);
 			}
 		}
@@ -40,5 +49,5 @@ fullap = function(car){
 }
 
 
-racers = Players().create(10, 9, global.level.aiBoost);
+racers = Players().create(10, 9,global.level.difficulty, global.level.aiBoost);
 circuit.positionRacers(racers, circuit_width, 0);

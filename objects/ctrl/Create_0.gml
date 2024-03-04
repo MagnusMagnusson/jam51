@@ -51,3 +51,5 @@ fullap = function(car){
 
 racers = Players().create(10, 9,global.level.difficulty, global.level.aiBoost);
 circuit.positionRacers(racers, circuit_width, 0);
+
+audio_play_sound(music_metal, 2, true);

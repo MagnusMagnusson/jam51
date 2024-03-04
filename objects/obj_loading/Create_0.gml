@@ -1,5 +1,6 @@
 alarm[0] = 1;
 
+SaveFile().load();
 things_to_load = [
 	"van",
 	"tree_1",

@@ -18,11 +18,11 @@ function _Levels() constructor{
 	]
 	
 	var cheating =  [
+		0.8,
+		0.9,
 		1,
 		1.1,
-		1.2,
-		1.3,
-		1.5
+		1.4
 	]
 	
 	add = function(level){
@@ -30,7 +30,7 @@ function _Levels() constructor{
 	}
 	
 	getAll = function(){
-		return levels;
+		return self.levels;
 	}
 	
 	getCupLevels = function(cup){
@@ -68,34 +68,35 @@ function _Levels() constructor{
 	var evening = new Cup(3, "Evening Rush", noone);
 	var night = new Cup(4, "Midnight Madness", noone);
 	
-	add(new Level("The First Job", path_test, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level("Figure Eight", path_test, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level("Easy pickings", path_test, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
-	add(new Level("A long stretch", path_test, 3, morning, 0, diff[1], cheating[0], 0, 0, 0));
+	add(new Level(0, "The First Job", path_test, 1, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(1, "Figure Eight", path_test, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(2, "Easy pickings", path_test, 3, morning, 0, diff[0], cheating[0], 0, 0, 0));
+	add(new Level(3, "A long stretch", path_test, 3, morning, 0, diff[1], cheating[0], 0, 0, 0));
 		
-	add(new Level("Picking up heat", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level("Figure Eight", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level("Easy pickings", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
-	add(new Level("A long stretch", path_test, 3, noon, 8, diff[2], cheating[1], 0, 0, 0));
+	add(new Level(4, "Picking up heat", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(5,"Figure Eight", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(6, "Easy pickings", path_test, 3, noon, 8, diff[1], cheating[1], 0, 0, 0));
+	add(new Level(7, "A long stretch", path_test, 3, noon, 8, diff[2], cheating[1], 0, 0, 0));
 		
-	add(new Level("Picking up heat", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level("Figure Eight", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level("Easy pickings", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
-	add(new Level("A long stretch", path_test, 3, afternoon, 16, diff[3], cheating[2], 0, 0, 0));
+	add(new Level(8, "Picking up heat", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(9, "Figure Eight", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(10, "Easy pickings", path_test, 3, afternoon, 16, diff[2], cheating[2], 0, 0, 0));
+	add(new Level(11, "A long stretch", path_test, 3, afternoon, 16, diff[3], cheating[2], 0, 0, 0));
 		
-	add(new Level("Picking up heat", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level("Figure Eight", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level("Easy pickings", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
-	add(new Level("A long stretch", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(12, "Picking up heat", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(13, "Figure Eight", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(14, "Easy pickings", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
+	add(new Level(15, "A long stretch", path_test, 3, evening, 25, diff[3], cheating[3], 0, 0, 0));
 		
-	add(new Level("Picking up heat", path_test, 3, night, 57 - 9 - 3, diff[4], cheating[4], 0, 0, 0));
-	add(new Level("Figure Eight", path_test, 3, night, 57 - 6 - 2, diff[4], cheating[4], 0, 0, 0));
-	add(new Level("Easy pickings", path_test, 3, night, 57 - 3 - 1, diff[4], cheating[4], 0, 0, 0));
-	add(new Level("A long stretch", path_test, 3, night, 57, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(16, "Picking up heat", path_test, 3, night, 57 - 9 - 3, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(17, "Figure Eight", path_test, 3, night, 57 - 6 - 2, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(18, "Easy pickings", path_test, 3, night, 57 - 3 - 1, diff[4], cheating[4], 0, 0, 0));
+	add(new Level(19, "A long stretch", path_test, 3, night, 57, diff[4], cheating[4], 0, 0, 0));
 	
 }
 
-function Level(_name, _path, _laps, _cup, _unlock, _speed, _aiBoost, _bestTime, _bestStars, _bestPosition) constructor{
+function Level(__id, _name, _path, _laps, _cup, _unlock, _speed, _aiBoost, _bestTime, _bestStars, _bestPosition) constructor{
+	_id = __id;
 	name = _name;
 	cup = _cup;
 	unlock = _unlock;

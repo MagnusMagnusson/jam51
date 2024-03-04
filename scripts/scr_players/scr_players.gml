@@ -8,6 +8,19 @@ function Players(){
 	return global._playerManager;
 }
 
+var playerNames = [
+	"CleanCorp LLC.",
+	"Joel's Cleaning Services",
+	"Bob",
+	"Banhammer Stain Removal",
+	"Washtorium",
+	"GMC Cleaning Services",
+	"Team Clean INC",
+	"Raccoon Washing Corporation",
+	"YoYoClean",
+	"The Other Cleaner"
+]
+
 function PlayerManager() constructor{
 	players = [];
 	
@@ -20,10 +33,16 @@ function PlayerManager() constructor{
 		return noone;
 	}
 	
-	create = function(count, humanIndex){
+	create = function(count, humanIndex, cheatLevel){
+		var robotCheat = cheatLevel + 0.1;
+		var robotCheatIncrement = 0.2 / (count - 1);
 		var racers = [];
 		for(var i = 0; i < count; i++){
 			var r = new Player(i == humanIndex);
+			if(i != humanIndex){
+				r.car_object.engine.enginePower *= robotCheat;
+				robotCheat -= robotCheatIncrement;
+			}
 			array_push(racers, r);
 		}
 		players = racers;
@@ -39,9 +58,19 @@ function PlayerManager() constructor{
 		}
 		return p;
 	}
+	
+	estimateFinishTime = function(player){
+		if(player.lap > ctrl.laps){
+			return player.finalTime;
+		}
+		var progress = (player.lastKnownCircuitPosition + (player.lap - 1)) / ctrl.laps;
+		var fakeTime = ctrl.laps * (player.timer / progress);
+		return fakeTime;
+	}
 }
 
-function Player(isHuman) constructor{
+function Player(name, isHuman) constructor{
+	car_object.name = name;
 	car_object = instance_create_layer(0,0,layer_get_id("overground"), o_car);
 	car_object.is_human = isHuman;
 	car_object.engine.skiddingSpeed = isHuman ? 20 : 2000;

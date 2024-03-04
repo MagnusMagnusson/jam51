@@ -1,9 +1,8 @@
 Thank you for playing. I hope you got all 60 washbuckets and had a great time doing it!
  
 
+Originally the game was supposed to have a stronger theme connection. You were actually driving around a little city driving from cleaning job to cleaning job. I didn't want the game to directly involve cleaning something up as I felt that was a bit too direct interpretation of the theme, but I couldn't find a good way to make that feel satisfying. A few iterations later I had ended up on the arcade racer. I'd wanted to go a bit more in-depth with the idea but with my time being somewhat limited and my lacklustre experience with 3d slowing down (even if it was fun) it eventually got cut down to it's very basics: just racing, no bells or whistles about it. 
 
+Online scoreboards were cut for the same reason - would have been lovely to have them, but didn't have the time. Maybe next jam. 
 
-
-Originally the game was supposed to have a stronger theme connection. You were actually driving around a little city driving from 
-cleaning job to cleaning job. I didn't want the game to directly involve cleaning something up as I felt that was a bit too direct 
-interpretation of the theme, but 
+Thank you again, and enjoy the rest of the games. 

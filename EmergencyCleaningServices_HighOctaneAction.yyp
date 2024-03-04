@@ -34,6 +34,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
   ],
   "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"AFTERWORD.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"finish_flag.mtl","CopyToMask":-1,"filePath":"datafiles/assets/models",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"finish_flag.obj","CopyToMask":-1,"filePath":"datafiles/assets/models",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"house_1.mtl","CopyToMask":-1,"filePath":"datafiles/assets/models",},

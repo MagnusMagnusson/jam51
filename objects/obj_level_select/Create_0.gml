@@ -1,29 +1,12 @@
-connected_controller_count = 0;
-audio_falloff_set_model(audio_falloff_exponent_distance);
-alarm[0] = 2;
+level = 0;
+cup = 0;
 
-selected = 0;
-menu_layer = 0;
+cups = [];
 
-
-option_text = [
-	"Job Select",
-	"Exit"
-]
-
-show_blink = true;
-
-enum menu_layers {
-	DEMO,
-	MAIN,
+var cup_count = Levels().getCupCount();
+show_debug_message("Getting cups. found {0}", cup_count);
+for(var i = 0; i < cup_count; i++){
+	var _cup = Levels().getCupLevels(i);
+	array_push(cups, _cup);
+	show_debug_message("Cup {0} has {1} levels", i, array_length(_cup)); 
 }
-
-
-
-option_functions = [
-	function(){ 
-		instance_destroy();
-		instance_create_layer(0,0,layer, obj_level_select);
-	},
-	function(){ game_end()},
-]

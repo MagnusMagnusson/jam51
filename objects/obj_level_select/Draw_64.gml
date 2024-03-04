@@ -1,51 +1,74 @@
-draw_set_color(c_white);
-draw_set_font(fnt_bog);
-draw_sprite_ext(spr_logo, 0, display_get_gui_width() / 2, display_get_gui_height() * 0.05,.5,.5,0,c_white,1);
+draw_set_alpha(0.55);
+draw_set_color(c_black);
 
+draw_rectangle(0,0,display_get_gui_width(), display_get_gui_height(), false);
 
-switch(menu_layer){
-	case 0: {
-		if(show_blink){
-			draw_set_font(fnt_smaller);
-			draw_set_halign(fa_center);
-			draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2, "Press 'Enter' to start");
-			if(Input().controller){
-				draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("A"), "Controller detected: Press the 'A'/'X' button");
-			} else{				
-				draw_text(display_get_gui_width() / 2, display_get_gui_height() / 2 + string_height("A"), @"No controller detected, but is strongly recommended. 
-Press 'start' to activate one.");
+draw_set_alpha(1);
+var stars = Levels().getStarCount();
+
+var smallBucketScale = 0.075;
+var cupCount = array_length(cups);
+var seperation = 16;
+var width = 256;
+var height = 100;
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+for(var i = 0; i < cupCount; i++){
+	var levelCount = array_length(cups[i]);
+	for(var j = 0; j < levelCount; j++){
+		var thisLevel = cups[i][j];
+		var levelStars = thisLevel.bestStars;
+		var unlock = thisLevel.unlock;
+		
+		var selected = i == cup && j == level;
+		draw_set_color(selected ? c_white : c_gray);
+		var x0, x1, y0, y1;
+		x0 = seperation + (display_get_gui_width() / 2 + (width * (j - levelCount / 2)));
+		x1 = -seperation + (display_get_gui_width() / 2 + (width * ((1+j) - levelCount / 2)));
+		y0 = seperation + (display_get_gui_height() / 2 + (height * (i - cupCount / 2)));
+		y1 = -seperation + (display_get_gui_height() / 2 + (height * ((1+i) - cupCount / 2)));
+		draw_rectangle(x0,y0,x1,y1,false);
+		
+		if(stars < unlock){
+			draw_sprite_ext(spr_bucket,0,(x0 + x1) / 2, (y0 + y1) / 2, smallBucketScale,smallBucketScale,0, c_black, 1);
+			draw_set_color(c_yellow);
+			draw_text((x0 + x1) / 2, (y0 + y1) / 2, unlock);
+		} else {
+			for(var b = 0; b < 3; b++){
+				draw_sprite_ext(spr_bucket,0,(x0 + x1) / 2 + 8*(b-1) + ((b - 1) * sprite_get_width(spr_bucket) * smallBucketScale), (y0 + y1) / 2, smallBucketScale,smallBucketScale,0, 
+				levelStars > b ? c_white : c_black,
+				1);
 			}
-			draw_set_halign(fa_left);
 		}
-		break;
-	}
-	case 1: {
-		var longest = 0;
-		for(var i = 0; i < array_length(option_text); i++){
-			longest = max(string_width(option_text[i]), longest);
-		}
-
-		draw_set_font(fnt_bog);
-		draw_set_halign(fa_center);
-
-		for(var i = 0; i < array_length(option_text); i++){
-			var x0 = display_get_gui_width() / 2 - longest/2 - 16;
-			var x1 = display_get_gui_width() / 2 + longest/2 + 16;
-			var y0 = (i*(32+string_height("A"))) + display_get_gui_height() / 2;
-			var y1 = (i*(32+string_height("A"))) + string_height("A")  + display_get_gui_height() /  2;
-	
-			draw_set_alpha(i == selected ? 1 : 0.8);
-			draw_set_color(i == selected ? #f2f1d6 :#88882d );
-			draw_roundrect(x0,y0, x1, y1, false);
-			draw_set_color(c_black)
-			draw_text((x0 + x1) / 2, y0, option_text[i]);
-		}
-
-		draw_set_alpha(1);
-		draw_set_halign(fa_left);
-		draw_set_font(fnt_smaller);
-		break;
+		
 	}
 }
 
+var bucketScale = 0.1;
 
+draw_set_color(c_white);
+var highlightedLevel = cups[cup][level];
+if(stars >= highlightedLevel.unlock){
+	draw_text((display_get_gui_width() / 2),  display_get_gui_height() - (sprite_get_height(spr_bucket) / 2) * bucketScale - 2*string_height("a"),
+	string("{0} - {1}. Best time : {2}, position {3}",
+			highlightedLevel.cup.name,
+			highlightedLevel.name,
+			highlightedLevel.bestTime,
+			highlightedLevel.bestPosition
+		)
+	);
+
+} else {
+	draw_text((display_get_gui_width() / 2),  display_get_gui_height() - (sprite_get_height(spr_bucket) / 2) * bucketScale - 2*string_height("a"),
+	string("*** LOCKED - EARN {0} MORE {1}!***", highlightedLevel.unlock - stars,(highlightedLevel.unlock - stars) == 1 ? "WASHING BUCKET" : "WASHING BUCKETS"));
+}
+
+
+
+draw_set_color(c_yellow);
+draw_sprite_ext(spr_bucket,0, 16 + (display_get_gui_width() / 2), display_get_gui_height() - (sprite_get_height(spr_bucket) / 2) * bucketScale, bucketScale,bucketScale, 0, c_white, 1);
+draw_text( display_get_gui_width() / 2 - sprite_get_width(spr_bucket) * bucketScale - 8, display_get_gui_height() - (sprite_get_height(spr_bucket) / 2) * bucketScale - 16, 
+string("{0} X ", stars));
+
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);

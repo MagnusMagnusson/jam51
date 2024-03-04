@@ -1,7 +1,7 @@
-circuit = new Circuit(Path1, 8);
+circuit = new Circuit(global.level.path, 8);
 circuit_width = 600;
 flag = ModelManager().get("finish_flag");
-laps = 1;
+laps = global.level.laps;
 countdown = 5;
 message = ""; 
 messageTimer = 0;

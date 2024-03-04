@@ -1,5 +1,4 @@
 connected_controller_count = 0;
-audio_falloff_set_model(audio_falloff_exponent_distance);
 alarm[0] = 2;
 
 selected = 0;

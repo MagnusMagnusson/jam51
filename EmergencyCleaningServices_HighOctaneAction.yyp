@@ -66,6 +66,7 @@
     {"id":{"name":"obj_loading","path":"objects/obj_loading/obj_loading.yy",},},
     {"id":{"name":"obj_level_select","path":"objects/obj_level_select/obj_level_select.yy",},},
     {"id":{"name":"scr_circuit","path":"scripts/scr_circuit/scr_circuit.yy",},},
+    {"id":{"name":"spr_bucket","path":"sprites/spr_bucket/spr_bucket.yy",},},
     {"id":{"name":"scr_input","path":"scripts/scr_input/scr_input.yy",},},
     {"id":{"name":"scr_levels","path":"scripts/scr_levels/scr_levels.yy",},},
     {"id":{"name":"s_placeholdertexture","path":"sprites/s_placeholdertexture/s_placeholdertexture.yy",},},
@@ -94,12 +95,12 @@
     {"id":{"name":"d3d_start","path":"scripts/d3d_start/d3d_start.yy",},},
     {"id":{"name":"ctrl","path":"objects/ctrl/ctrl.yy",},},
     {"id":{"name":"scr_model_manager","path":"scripts/scr_model_manager/scr_model_manager.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rm_race","path":"rooms/rm_race/rm_race.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_race","path":"rooms/rm_race/rm_race.yy",},},
     {"roomId":{"name":"rm_loading","path":"rooms/rm_loading/rm_loading.yy",},},
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

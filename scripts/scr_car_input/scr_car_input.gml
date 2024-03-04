@@ -68,32 +68,23 @@ function robot_get_input(circuitPosition, carHeading){
 	var desiredDirection = ctrl.circuit.getDirection(circuitPosition  + 0.005);
 	var w = ctrl.circuit_width;
 	var distanceFromTrack = ctrl.circuit.getDistanceFromTrack(x,y, circuitPosition, 0, 0);
-	if(distanceFromTrack > w/2 - 32){
-		inputs[$"acc"] = 1;
-		var center_x = ctrl.circuit.getTrueX(circuitPosition, 0);
-		var center_y = ctrl.circuit.getTrueY(circuitPosition, 0);
-		var ad = angle_difference(carHeading,point_direction(x, y, center_x, center_y));
-		if(abs(ad) > 5){
-			if(ad < 0){
-				inputs[$"right"] = 0;
-				inputs[$"left"] = 1;
-			} else {
-				inputs[$"left"] = 0;
-				inputs[$"right"] = 1;
-			}
-		}
-	} else {
-		var ad = angle_difference(carHeading,desiredDirection);
-		if(abs(ad) > 5){
-			if(ad < 0){
-				inputs[$"right"] = 0;
-				inputs[$"left"] = 1;
-			} else {
-				inputs[$"left"] = 0;
-				inputs[$"right"] = 1;
-			}
+	var ad = angle_difference(carHeading,desiredDirection);
+	if(abs(ad) > 3){
+		if(ad < 0){
+			inputs[$"right"] = 0;
+			inputs[$"left"] = 1;
+		} else {
+			inputs[$"left"] = 0;
+			inputs[$"right"] = 1;
 		}
 	}
 	
+	if(distanceFromTrack > (w/2 + 16)){
+		var center_x = ctrl.circuit.getTrueX(circuitPosition, 0);
+		var center_y = ctrl.circuit.getTrueY(circuitPosition, 0);
+		x -= sign(x - center_x);
+		y -= sign(y - center_y);
+	}
+
 	return inputs;
 }

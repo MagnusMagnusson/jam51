@@ -27,6 +27,7 @@
     {"name":"obj_loading","order":7,"path":"objects/obj_loading/obj_loading.yy",},
     {"name":"obj_level_select","order":2,"path":"objects/obj_level_select/obj_level_select.yy",},
     {"name":"scr_circuit","order":4,"path":"scripts/scr_circuit/scr_circuit.yy",},
+    {"name":"spr_bucket","order":5,"path":"sprites/spr_bucket/spr_bucket.yy",},
     {"name":"scr_levels","order":8,"path":"scripts/scr_levels/scr_levels.yy",},
     {"name":"s_placeholdertexture","order":3,"path":"sprites/s_placeholdertexture/s_placeholdertexture.yy",},
     {"name":"fnt_giant","order":1,"path":"fonts/fnt_giant/fnt_giant.yy",},

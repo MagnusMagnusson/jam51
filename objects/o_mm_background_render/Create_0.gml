@@ -8,6 +8,7 @@ yto = 100;
 treexx = 0;
 trees = [];
 houses = [];
+o_ground_render.off = -1000;
 
 for(var i = 0; i < 25; i++){
 	trees[i] = ModelManager().get("tree_"+ string(choose(1,2,3)));

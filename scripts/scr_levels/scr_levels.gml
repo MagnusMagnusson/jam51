@@ -14,15 +14,15 @@ function _Levels() constructor{
 		2,
 		2.5,
 		3,
-		3.333
+		3.5
 	]
 	
 	var cheating =  [
-		0.8,
-		0.85,
+		0.9,
 		0.95,
 		1,
-		1.02
+		1.01,
+		1.03
 	]
 	
 	add = function(level){
